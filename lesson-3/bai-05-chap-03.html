@@ -1,141 +1,125 @@
 <!doctype html>
 <html lang="en" data-bs-theme="light">
-    <head>
-        <title>Bài thực hành số 05 - Chương 03</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <!-- Bootstrap CSS v5.3.8 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-            crossorigin="anonymous"
-        />
-    </head>
+<head>
+    <title>Bài thực hành số 05 - Chương 03</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <body>
-        <header>
-            <!-- place navbar here -->
-        </header>
-        <main>
-            <div class="container mt-5">
+    <!-- Bootstrap CSS v5.3.8 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+</head>
 
-    <h1>Xác thực biểu mẫu</h1>
+<body>
+    <header>
+        <!-- place navbar here -->
+    </header>
+    <main>
+        <div class="container mt-5">
 
-    <p>
-        Ví dụ bạn gửi biểu mẫu nhưng chưa điền hết thông tin
-        thì sẽ nhận được thông báo như bên dưới.
-    </p>
+            <h1>Xác thực biểu mẫu</h1>
+
+            <p>
+                Ví dụ bạn gửi biểu mẫu nhưng chưa điền hết thông tin
+                thì sẽ nhận được thông báo như bên dưới.
+            </p>
 
 
-    <form class="needs-validation" novalidate>
+            <form class="needs-validation" novalidate>
 
-        <!-- Tên người dùng -->
-        <div class="mb-3">
+                <!-- Tên người dùng -->
+                <div class="mb-3">
 
-            <label class="form-label">
-                Tên người dùng:
-            </label>
+                    <label class="form-label">
+                        Tên người dùng:
+                    </label>
 
-            <input type="text"
-                   class="form-control"
-                   placeholder="Nhập tên người dùng"
-                   required>
+                    <input type="text" class="form-control" placeholder="Nhập tên người dùng" required>
 
-            <div class="invalid-feedback">
-                Điền đầy đủ thông tin.
-            </div>
+                    <div class="invalid-feedback">
+                        Điền đầy đủ thông tin.
+                    </div>
 
-        </div>
-
-
-        <!-- Mật khẩu -->
-        <div class="mb-3">
-
-            <label class="form-label">
-                Mật khẩu:
-            </label>
-
-            <input type="password"
-                   class="form-control"
-                   placeholder="Enter password"
-                   required>
-
-            <div class="invalid-feedback">
-                Điền đầy đủ thông tin.
-            </div>
-
-        </div>
-
-
-        <!-- Đồng ý -->
-        <div class="mb-3">
-
-            <div class="form-check">
-
-                <input type="checkbox"
-                       class="form-check-input"
-                       id="agree"
-                       required>
-
-                <label class="form-check-label"
-                       for="agree">
-                    Đồng ý
-                </label>
-
-                <div class="invalid-feedback">
-                    Bạn phải đồng ý.
                 </div>
 
-            </div>
+
+                <!-- Mật khẩu -->
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Mật khẩu:
+                    </label>
+
+                    <input type="password" class="form-control" placeholder="Enter password" required>
+
+                    <div class="invalid-feedback">
+                        Điền đầy đủ thông tin.
+                    </div>
+
+                </div>
+
+
+                <!-- Đồng ý -->
+                <div class="mb-3">
+
+                    <div class="form-check">
+
+                        <input type="checkbox" class="form-check-input" id="agree" required>
+
+                        <label class="form-check-label" for="agree">
+                            Đồng ý
+                        </label>
+
+                        <div class="invalid-feedback">
+                            Bạn phải đồng ý.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="btn btn-dark">
+                    Đăng nhập
+                </button>
+
+            </form>
 
         </div>
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous">
+    </script>
+    <script>
 
+            // Lấy tất cả form cần kiểm tra
+            const forms = document.querySelectorAll('.needs-validation');
 
-        <button type="submit"
-                class="btn btn-dark">
-            Đăng nhập
-        </button>
+            Array.from(forms).forEach(form => {
 
-    </form>
+                form.addEventListener('submit', event => {
 
-</div>
+                    if (!form.checkValidity()) {
 
+                        event.preventDefault();
+                        event.stopPropagation();
 
-<script>
+                    }
 
-    // Lấy tất cả form cần kiểm tra
-    const forms = document.querySelectorAll('.needs-validation');
+                    form.classList.add('was-validated');
 
-    Array.from(forms).forEach(form => {
+                });
 
-        form.addEventListener('submit', event => {
+            });
 
-            if (!form.checkValidity()) {
+        </script>
+</body>
 
-                event.preventDefault();
-                event.stopPropagation();
-
-            }
-
-            form.classList.add('was-validated');
-
-        });
-
-    });
-
-</script>
-        </main>
-        <footer>
-            <!-- place footer here -->
-        </footer>
-        <!-- Bootstrap JavaScript Bundle (includes Popper) -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"
-        ></script>
-    </body>
 </html>
