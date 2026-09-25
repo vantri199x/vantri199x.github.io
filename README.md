@@ -9,6 +9,7 @@ Tập hợp các bài thực hành theo từng chương.
 | [Lesson 1](#-lesson-1) | Các bài thực hành chương 1 |
 | [Lesson 2](#-lesson-2) | Các bài thực hành chương 2 |
 | [Lesson 3](#-lesson-3) | Các bài thực hành chương 3 |
+| [Lesson 4](#-lesson-4) | Các bài thực hành chương 4 |
 
 ---
 
@@ -23,6 +24,10 @@ Tập hợp các bài thực hành theo từng chương.
 ## 📙 Lesson 3
 
 Đây là các bài thực hành chương 3.
+
+## 📕 Lesson 4
+
+Đây là các bài thực hành chương 4.
 
 ---
 
